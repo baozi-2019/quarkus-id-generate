@@ -1,0 +1,18 @@
+syntax="proto3";
+
+option java_multiple_files = true;
+option java_package = "org.baozi.quarkus.id.generate.runtime.grpc";
+option java_outer_classname = "IdGenerateServiceProto";
+
+package user.service;
+
+service IdGenerateGrpcService {
+    rpc snowflakeId(IdGenerateRequest) returns (IdGenerateReply) {}
+}
+
+message IdGenerateRequest {
+}
+
+message IdGenerateReply {
+  int64 id = 1;
+}
